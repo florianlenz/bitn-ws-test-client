@@ -45315,6 +45315,10 @@ var io = __webpack_require__(58);
         pseudo: {
             required: true,
             type: String
+        },
+        server: {
+            required: true,
+            type: String
         }
     },
     data: function data() {
@@ -45336,7 +45340,7 @@ var io = __webpack_require__(58);
     },
     computed: {
         socket: function socket() {
-            return io.connect('http://127.0.0.1:3833', { query: { pubKey: this.pubKey } });
+            return io.connect(this.server, { query: { pubKey: this.pubKey } });
         }
     },
     mounted: function mounted() {

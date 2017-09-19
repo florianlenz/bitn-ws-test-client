@@ -43,6 +43,10 @@
             pseudo: {
                 required: true,
                 type: String
+            },
+            server: {
+                required: true,
+                type: String
             }
         },
         data: function(){
@@ -64,7 +68,7 @@
         },
         computed: {
             socket: function(){
-                return io.connect('http://127.0.0.1:3833', {query: {pubKey: this.pubKey}});
+                return io.connect(this.server, {query: {pubKey: this.pubKey}});
             }
         },
         mounted: function(){

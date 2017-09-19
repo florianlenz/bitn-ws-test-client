@@ -44,6 +44,12 @@
                         </div>
                     @endif
 
+                    @if($errors->has('server'))
+                        <div class="alert alert-danger">
+                            {{$errors->get('server')[0]}}
+                        </div>
+                    @endif
+
                     <form method="post" action="/profile/new">
 
                         {{csrf_field()}}
@@ -56,6 +62,11 @@
                         <div class="form-group">
                             <label for="description">Description</label>
                             <input id="description" type="text" class="form-control" name="description" value="{{old('description')}}">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="server">Server address</label>
+                            <input id="server" type="text" class="form-control" name="server" value="{{old('server')}}">
                         </div>
 
                         <button class="btn btn-primary">Submit</button>

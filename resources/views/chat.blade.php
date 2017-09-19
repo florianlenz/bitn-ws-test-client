@@ -43,7 +43,7 @@
             </div>
         </div>
 
-        <chat pub-key="{{$person->public_key}}" priv-key="{{$person->private_key}}" pseudo="{{$person->pseudo}}"></chat>
+        <chat server="{{$person->server}}" pub-key="{{$person->public_key}}" priv-key="{{$person->private_key}}" pseudo="{{$person->pseudo}}"></chat>
 
     </div>
 

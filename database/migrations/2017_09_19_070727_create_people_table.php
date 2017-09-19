@@ -22,6 +22,7 @@ class CreatePeopleTable extends Migration
             $table->string('session_id');
             $table->string('public_key');
             $table->string('private_key');
+            $table->string('server');
         });
     }
 

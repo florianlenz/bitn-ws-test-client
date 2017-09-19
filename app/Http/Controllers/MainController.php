@@ -11,13 +11,15 @@ class MainController extends Controller
     {
         $this->validate($request, [
             'pseudo' => 'required|string',
-            'description' => 'required|string'
+            'description' => 'required|string',
+            'server' => 'required|url'
         ]);
 
         $p = new Person($request->all());
         $p->session_id = session()->getId();
         $p->public_key = str_random(30);
         $p->private_key = str_random(30);
+        $p->server = $request->get('server');
         $p->save();
 
         return redirect('/');
